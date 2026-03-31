@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>我的 CSS 盒子模型实验</title>
+<style>
+  body {
+    background-color: #f5f5f5; /* 浅灰色的页面背景，方便你看清白色的盒子 */
+    padding: 20px;
+    font-family: sans-serif;
+  }
+
+  /* --- 实验 1：只有内容 --- */
+  .step-1 {
+    background-color: #4CAF50; /* 绿色背景：代表玻璃杯 */
+    color: white;
+    width: 200px;
+    height: 100px;
+  }
+
+  /* --- 实验 2：加入 Padding（内边距） --- */
+  .step-2 {
+    background-color: #2196F3; /* 蓝色背景 */
+    color: white;
+    width: 200px;
+    height: 100px;
+    
+    /* 🧪 动手试：把 30px 改成 60px，看看蓝色区域怎么变大！ */
+    padding: 30px; 
+  }
+
+  /* --- 实验 3：加入 Border（边框） --- */
+  .step-3 {
+    background-color: #FF9800; /* 橙色背景 */
+    color: white;
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+
+    /* 🧪 动手试：把 10px 改成 20px，或者把 solid 改成 dashed（虚线） */
+    border: 10px solid #E91E63; 
+  }
+
+  /* --- 实验 4：加入 Margin（外边距） --- */
+  .step-4 {
+    background-color: #9C27B0; /* 紫色背景 */
+    color: white;
+    width: 200px;
+    height: 100px;
+    padding: 30px;
+    border: 10px solid #3F51B5;
+
+    /* 🧪 动手试：把 50px 改成 100px，看看它怎么把下面的黑盒子往下推！ */
+    margin: 50px; 
+  }
+
+  /* 用于对比的隔壁邻居盒子 */
+  .neighbor {
+    background-color: #333; 
+    color: white;
+    width: 200px;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+  <h2>1. 纯净的 Content (内容)</h2>
+  <div class="step-1">
+    我是玻璃杯 (宽200 高100)<br>
+    没有气泡膜，没有纸箱
+  </div>
+  <hr>
+
+  <h2>2. Content + Padding (内边距)</h2>
+  <div class="step-2">
+    我是包了气泡膜的玻璃杯<br>
+    我的设定还是宽200，但加上Padding，我被撑大了！
+  </div>
+  <hr>
+
+  <h2>3. Content + Padding + Border (边框)</h2>
+  <div class="step-3">
+    我被装进红色的纸箱啦！<br>
+    外面多了一圈实线外壳。
+  </div>
+  <hr>
+
+  <h2>4. Content + Padding + Border + Margin (外边距)</h2>
+  <div class="step-4">
+    我是一个完整的快递箱！<br>
+    我有 Margin，所以我强制要求周围50px内不能有其他东西。
+  </div>
+
+  <div class="neighbor">
+    我是隔壁的黑色小箱子，我被紫色的箱子（通过Margin）推开了！
+  </div>
+
+</body>
+</html>
